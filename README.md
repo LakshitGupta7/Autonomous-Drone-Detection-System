@@ -1,6 +1,6 @@
 # Autonomous Drone Detection System
 
-A **Multimodal Camera-Based Drone Detection System** designed to identify unauthorized drone activities in restricted areas. The system leverages **YOLO**, **RetinaNet** (Detectron2), and **One-Class SVM** to detect drones in images, videos, and live feeds using a mobile phone camera (via DroidCam).
+A **Multimodal Camera-Based Drone Detection System** designed to identify unauthorized drone activities in restricted areas. The system leverages **YOLO**, **ResNet50**, and **One-Class SVM** to detect drones in images, videos, and live feeds using a mobile phone camera (via DroidCam).
 
 This repository provides the **pipeline for drone detection** and the **GUI** for visualizing detection results in real-time. It does not contain the dataset, trained models, or model training/testing codes.
 
@@ -9,7 +9,7 @@ This repository provides the **pipeline for drone detection** and the **GUI** fo
 ### Features:
 - **Multimodal Detection**: The system detects drones using multiple models:
   - **YOLO**: For real-time drone detection.
-  - **RetinaNet** (via Detectron2): For more accurate detection, complementing YOLO.
+  - **ResNet50**: For more accurate detection, complementing YOLO.
   - **One-Class SVM**: To filter false positives and further classify detected objects.
 - **Real-time Detection**: Process images, videos, and live webcam feeds.
 - **Graphical User Interface (GUI)**: Built with **PyQt5**, providing a user-friendly interface for drone detection and real-time data visualization.
@@ -34,35 +34,13 @@ This repository provides the **pipeline for drone detection** and the **GUI** fo
 3. **Detection Alert**:
    - Whenever a drone is detected, an audio alarm from the `assets/beep3.wav` folder plays as an alert.
 
-## Installation
-
 ### Prerequisites:
-- **Conda** must be installed on the system.
+- **Python 3.9** must be installed on the system.
 
-### Steps to Set Up:
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/Autonomous-Drone-Detection.git
-   cd Autonomous-Drone-Detection
-Install Dependencies:
-
-Run the setup_migrations.bat file to install all the required dependencies.
-
-```bash
-./setup_migrations.bat
-```
-
-Run the Project:
-
-After setting up the dependencies, use the run.bat file to run the project.
-
-```bash
-./run.bat
-```
 Note:
 This repository does not contain the dataset on which models are trained, the trained models, or the model training/testing codes.
 
-For dataset, trained models, and training/testing codes, contact the developer at sharmavansh0512@gmail.com.
+For dataset, trained models, and training/testing codes, contact the developer at lakshit.gupta072005@gmail.com.
 
 ### Usage
 **GUI Interface:**
@@ -87,29 +65,6 @@ The system saves cropped detections for further classification by SVM to reduce 
 
 Whenever a drone is detected, an alarm sound will play to notify the user.
 
-Folder Structure
-```bash
-
-Autonomous-Drone-Detection/
-├── assets/                  # Alarm audio files for alert system
-├── detectron2/              # Detectron2
-├── cropped_objects/         # Folder to store cropped drone objects for SVM classification
-│   ├── images/              # Cropped objects from image detections
-│   ├── videos/              # Cropped objects from video detections
-│   └── live/                # Cropped objects from live feed detections
-├── results/                 # Folder to store detection results
-│   ├── images/              # Image detections
-│   ├── videos/              # Video detections
-│   └── live/                # Live feed detections
-├── pipeline_image.py        # Python file for image-based detection pipeline
-├── pipeline_mp4.py          # Python file for video-based detection pipeline (MP4 files)
-├── pipeline_live.py         # Python file for live feed detection pipeline
-├── ADDS.py                  # Python file for the GUI (Autonomous Drone Detection System)
-├── setup_migrations.bat     # Batch file to install dependencies
-├── run.bat                  # Batch file to run the project
-└── README.md                # This file
-
-```
 ### Screenshots
 **GUI Interface:**
 ![Screenshot 2025-04-15 151156](https://github.com/user-attachments/assets/4ecdbc12-862d-4a68-a833-c36f733621e9)
@@ -142,5 +97,5 @@ Feel free to fork this repository and contribute by submitting pull requests or 
 ### Contact
 For any questions or requests regarding the dataset, trained models, or training/testing code, please contact the developer:
 
-**Email: sharmavansh0512@gmail.com**
+**Email: lakshit.gupta072005@gmail.com**
 
